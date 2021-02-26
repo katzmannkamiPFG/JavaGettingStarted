@@ -15,16 +15,16 @@ public class WeekOneExercisesPartOne {
     @Test
     // TODO Code: What is the least amount of code we need to make this test pass?
     public void numberOfWholeSlicesForOnePizzaAndEightPeople() {
-        int numberOfPeople = 8;
-        int numberOfEightSlicePizzas = 1;
+      int numberOfPeople = 8;
+      int numberOfEightSlicePizzas = 1;
 
-        int actualSlicesPerPerson = divideUpEightSlicePizzasEvenly(numberOfEightSlicePizzas, numberOfPeople);
-
-        assertEquals(1, actualSlicesPerPerson);
+      int actualSlicesPerPerson = divideUpEightSlicePizzasEvenly(numberOfEightSlicePizzas, numberOfPeople);
+        // int actualSlicesPerPerson = (numberOfEightSlicePizzas*numberOfPeople)/numberOfPeople;
+      assertEquals(1, actualSlicesPerPerson);
     }
 
     @Test
-    @Disabled
+
     public void numberOfWholeSlicesFromOnePizzaAndEightPeople() {
         int numberOfPeople = 4;
         int numberOfEightSlicePizzas = 2;
@@ -47,7 +47,7 @@ public class WeekOneExercisesPartOne {
     }
 
     private int divideUpEightSlicePizzasEvenly(int numberOfPizzas, int numberOfPeople) {
-        return 0;
+        return 1;
     }
 
     private int determineLeftoverSlicesOfPizza(int numberOfPizzas, int numberOfPeople) {
