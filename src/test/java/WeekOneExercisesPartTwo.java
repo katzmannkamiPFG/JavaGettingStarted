@@ -22,7 +22,6 @@ public class WeekOneExercisesPartTwo {
     }
 
     @Test
-    @Disabled
     public void bloodAlcoholLevelForAFemale() {
         char gender = 'F';
         int weightInPounds = 135;
@@ -57,6 +56,18 @@ public class WeekOneExercisesPartTwo {
     private float calculateBAC(char gender, int weightInPounds, int ouncesOfAlcoholConsumed, float hoursSinceLastDrink) {
         // TODO RESPONSE: In the PluralSight video, you learned of three ways to make decisions based on the value
         //   in the gender variable. Implement this method using one way, and describe how the other ways could work.
-        return 0.03f;
+        float actualBAC, weightQuotient, peakAlcoholContent;
+        float weightCalc = 5.14f;
+        float alcoholDistMen = 0.73f;
+        float alcoholDistWomen = 0.66f;
+        weightQuotient = weightCalc / weightInPounds;
+        if (gender == 'M') {
+            peakAlcoholContent = (weightQuotient * ouncesOfAlcoholConsumed * alcoholDistMen);
+        }
+        else {
+            peakAlcoholContent = (weightQuotient * ouncesOfAlcoholConsumed * alcoholDistWomen);
+        }
+        actualBAC = peakAlcoholContent - (hoursSinceLastDrink * 0.015f);
+        return actualBAC;
     }
 }
