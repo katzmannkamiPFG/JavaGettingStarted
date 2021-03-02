@@ -34,7 +34,6 @@ public class WeekTwoExercisePartOne {
     // TODO Response: Why would you never refactor if you had a failing test?
 
     @Test
-    @Disabled
     // TODO Response: Why did we start with this test?
     public void whenRollingAllGutterBallsScoreIsZero() {
         rollMany(20, 0);
