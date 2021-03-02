@@ -44,8 +44,8 @@ public class WeekTwoExercisePartOne {
     }
 
     @Test
-    @Disabled
     // TODO Response:  If the above test works with open frames, why is this test necessary?
+    //Testing the loop . 20 rolls with 1 pin down per roll = 20.  We stop the loop once i was not less than the rollcount
     public void whenRollingOpenFrameScoreIsSumOfRolls() {
         rollMany(20, 1);
 
