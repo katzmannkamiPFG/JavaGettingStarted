@@ -56,7 +56,6 @@ public class WeekTwoExercisePartOne {
 
     // TODO CODE: Start here
     @Test
-    @Disabled
     public void whenRollingSpareFrameScoreIsTenPlusNextRoll() {
         bowlingGame.roll(3);
         bowlingGame.roll(7);
@@ -84,8 +83,17 @@ public class WeekTwoExercisePartOne {
     //TODO Response: Why don't we need any more tests than these?
 
     private void rollMany(int rollCount, int pins) {
+//        boolean spareFrame
+//        int spareFrame == 10 + nextFrame
+//        int sumOfRolls
         for(int i = 0; i < rollCount; i++) {
             bowlingGame.roll(pins);
+//            // bowlingGame.score();
+//            if (spareFrame == 'True') {
+//                bowlingGame.score() == (10 + nextFrame);
+//            }
+//            else
+//                bowlingGame.score() == sumOfRolls;
         }
     }
 }
