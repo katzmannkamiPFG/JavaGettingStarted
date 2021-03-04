@@ -68,7 +68,6 @@ public class WeekTwoExercisePartOne {
     }
 
     @Test
-    @Disabled
     public void whenRollingStrikeFrameScoreIsTenPlusNextTwoRolls() {
         bowlingGame.roll(10);
         bowlingGame.roll(7);
