@@ -2,7 +2,7 @@ public class FizzBuzz {
     public String execute(Integer number) {
         if ( number % 2 == 0)
             return "2";
-        if ( number == 3)
+        if ( number % 3 == 0)
             return "Fizz";
         else
             return "1";
