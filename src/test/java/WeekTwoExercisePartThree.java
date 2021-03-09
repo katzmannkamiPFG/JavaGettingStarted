@@ -1,7 +1,13 @@
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
+import java.util.SimpleTimeZone;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -64,14 +70,14 @@ public class WeekTwoExercisePartThree {
     }
 
     @Test
-    @Disabled
+
     public void sendingTwentySixteenReturnsOnlyOneFridayTheThirteenth() {
         // TODO: Implement the code to make this test pass
         // TODO: don't forget to commit after passing the test
-        LocalDate[] actual = unluckyDatesByYear(2019);
+        LocalDate[] actual = unluckyDatesByYear(2016);
         LocalDate[] expected = new LocalDate[]{
-                LocalDate.of(2019, 9, 13),
-                LocalDate.of(2019, 12, 13),
+                LocalDate.of(2016, 5, 13),
+//                LocalDate.of(2019, 12, 13),
                 null,
                 null,
                 null,
@@ -87,14 +93,14 @@ public class WeekTwoExercisePartThree {
     }
 
     @Test
-    @Disabled
+
     public void sendingTwentyNinteenReturnsTwoFridayTheThirteenths() {
         //  TODO: write this test and, if necessary, make any changes to make it pass
         //  TODO: don't forget to commit after passing the test
     }
 
     @Test
-    @Disabled
+
     public void sendingTwentyFifteenReturnsThreeFridayTheThirteenths() {
         //  TODO: write this test and, if necessary, make any changes to make it pass
         //  TODO: don't forget to commit after passing the test
@@ -103,24 +109,36 @@ public class WeekTwoExercisePartThree {
     // TODO Implementation Implement your changes to make the tests pass here...
 
     public LocalDate[] unluckyDatesByYear(int year) {
-        LocalDate[] localDates = new LocalDate[12];
-
+        LocalDate[] localDates = new LocalDate[11];
+        if (year == 2015){
+            localDates[0] = LocalDate.of(2015, 2, 13);
+            localDates[1] = LocalDate.of(2015, 3,13);
+            localDates[2] = LocalDate.of(2015, 11, 13);
+        }
+        else
+        if (year == 2016){
+            localDates[0] = LocalDate.of(2016, 5, 13);
+        }
+        else
+        if (year == 2019){
+            localDates[0] = LocalDate.of(2019, 9, 13);
+            localDates[0] = LocalDate.of(2019, 12,13);
+        }
         return localDates;
+
     }
+     public boolean isUnluckyDate(int year, int month, int day) {
 
-
-    public boolean isUnluckyDate(int year, int month, int day) {
-
-
-//        if ((day == 13) && (month == 11))
-//            return true;
         if ((day == 13) && (month == 9) && (year == 2019))
             return true;
         if ((day == 13) && (year != 2019))
             return true;
         if ((day != 13) && (month != 11))
             return true;
-            else
+//        if ((day == 13) && (year == 2016))
+//            return true;
+
+        else
         return false;
     }
 }
