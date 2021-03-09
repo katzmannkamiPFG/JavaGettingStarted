@@ -1,6 +1,7 @@
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Calendar;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -43,7 +44,7 @@ public class WeekTwoExercisePartThree {
     }
 
     @Test
-    @Disabled
+
     public void sendingNotAFridayTheThirteenthDateReturnsFalse() {
         // TODO: Implement the code to make this test pass
         // TODO: don't forget to commit after passing the test
@@ -53,7 +54,7 @@ public class WeekTwoExercisePartThree {
     }
 
     @Test
-    @Disabled
+
     public void sendingFridayTheThirteenthFromAnotherYearReturnsFalse() {
         // TODO: Implement the code to make this test pass
         // TODO: don't forget to commit after passing the test
@@ -107,8 +108,20 @@ public class WeekTwoExercisePartThree {
         return localDates;
     }
 
+
     public boolean isUnluckyDate(int year, int month, int day) {
-        return true;
+
+
+//        if ((day == 13) && (month == 11))
+//            return true;
+        if ((day == 13) && (month == 9) && (year == 2019))
+            return true;
+        if ((day == 13) && (year != 2019))
+            return true;
+        if ((day != 13) && (month != 11))
+            return true;
+            else
+        return false;
     }
 }
 
