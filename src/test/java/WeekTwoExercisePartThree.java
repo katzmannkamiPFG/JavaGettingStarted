@@ -1,6 +1,7 @@
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -77,7 +78,7 @@ public class WeekTwoExercisePartThree {
         LocalDate[] actual = unluckyDatesByYear(2016);
         LocalDate[] expected = new LocalDate[]{
                 LocalDate.of(2016, 5, 13),
-//                LocalDate.of(2019, 12, 13),
+                null,
                 null,
                 null,
                 null,
@@ -109,34 +110,46 @@ public class WeekTwoExercisePartThree {
     // TODO Implementation Implement your changes to make the tests pass here...
 
     public LocalDate[] unluckyDatesByYear(int year) {
-        LocalDate[] localDates = new LocalDate[11];
-        if (year == 2015){
-            localDates[0] = LocalDate.of(2015, 2, 13);
-            localDates[1] = LocalDate.of(2015, 3,13);
-            localDates[2] = LocalDate.of(2015, 11, 13);
-        }
-        else
-        if (year == 2016){
-            localDates[0] = LocalDate.of(2016, 5, 13);
-        }
-        else
-        if (year == 2019){
-            localDates[0] = LocalDate.of(2019, 9, 13);
-            localDates[0] = LocalDate.of(2019, 12,13);
-        }
+        LocalDate[] localDates = new LocalDate[12];
+          LocalDate workingDate;
+
+          for (int month = 1, positionInArray = 0; month <= 12; month++) {
+              if (isUnluckyDate(year,month,13)) {
+                  localDates[positionInArray] = LocalDate.of(year, month, 13);
+              }
+          }
+
+//        if (year == 2015){
+//            localDates[0] = LocalDate.of(2015, 2, 13);
+//            localDates[1] = LocalDate.of(2015, 3,13);
+//            localDates[2] = LocalDate.of(2015, 11, 13);
+//        }
+//        else
+//        if (year == 2016){
+//            localDates[0] = LocalDate.of(2016, 5, 13);
+//        }
+//        else
+//        if (year == 2019){
+//            localDates[0] = LocalDate.of(2019, 9, 13);
+//            localDates[0] = LocalDate.of(2019, 12,13);
+//        }
         return localDates;
 
     }
      public boolean isUnluckyDate(int year, int month, int day) {
+         DayOfWeek dayOfWeek = LocalDate.of(year,month,day).getDayOfWeek();
+         if (dayOfWeek == DayOfWeek.FRIDAY){
+             return true;
 
-        if ((day == 13) && (month == 9) && (year == 2019))
-            return true;
-        if ((day == 13) && (year != 2019))
-            return true;
-        if ((day != 13) && (month != 11))
-            return true;
-//        if ((day == 13) && (year == 2016))
+         }
+//        if ((day == 13) && (month == 9) && (year == 2019))
 //            return true;
+//        if ((day == 13) && (year != 2019))
+//            return true;
+//        if ((day != 13) && (month != 11))
+//            return true;
+////        if ((day == 13) && (year == 2016))
+////            return true;
 
         else
         return false;
